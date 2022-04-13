@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #fffffe;
+  --secondary-color: #eff0f3;
+  --tertiary-color: #d9376e;
+  --tertiary-color-5: #d9376e80;
+  --highlight-color: #ff8e3c;
+  --highlight-color-5: #ff8e3c80;
+  --highlight-color-75: #ff8e3cc0;
+  --title-font: "Grape Nuts", cursive;
+  --subtitle-font: "Kaisei HarunoUmi", serif;
+  --body-font: "Noto Serif JP", serif;
+}
+
+body {
+  font-family: var(--body-font);
+}
