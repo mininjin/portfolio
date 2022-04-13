@@ -2,11 +2,9 @@
   <div :class="class" ref="container">
     <div :class="`transition-all duration-300 ${on ? '' : 'translate-y-10 opacity-0'}`">
       <img v-if="src" :src="src" :alt="workElement.title" class="w-full object-contain mb-4" @click="toggleModal">
-      <a class="text-lg font-bold text-center underline flex items-center justify-center" :href="workElement.href"
-        rel="noopener noreferrer" target="_blank">
-        <span class="mr-2">{{ workElement.title }}</span>
-        <font-awesome-icon icon="arrow-up-right-from-square" class="w-4" />
-      </a>
+      <div class="text-center">
+        <anchor-link :href="workElement.href" :name="workElement.title" class-name="text-lg font-bold" />
+      </div>
     </div>
   </div>
   <transition enter-from-class="opacity-0" leave-to-class="opacity-0">
@@ -16,11 +14,9 @@
       <div class="max-w-2xl flex-auto flex flex-col bg-primary rounded-xl items-start p-3">
         <div class="w-full flex-grow-0 mb-4">
           <img v-if="src" :src="src" :alt="workElement.title" class="w-full object-contain mb-4">
-          <a class="text-lg font-bold text-center underline flex items-center justify-center" :href="workElement.href"
-            rel="noopener noreferrer" target="_blank">
-            <span class="mr-2">{{ workElement.title }}</span>
-            <font-awesome-icon icon="arrow-up-right-from-square" class="w-4" />
-          </a>
+          <div class="text-center">
+            <anchor-link :href="workElement.href" :name="workElement.title" class-name="text-lg font-bold" />
+          </div>
         </div>
         <div class="p-3">
           <div v-for="info in workElement.information" :key="info.title" class="flex flex-wrap items-center mb-2">
@@ -43,6 +39,7 @@ import { IMAGE_DIR, WORK_BACKGROUND_OPACITY } from '@/constants/application';
 import { isInContent } from '@/plugins/checkScroll';
 import { setOpacity } from '@/plugins/opacity';
 import { computed, onMounted, ref } from 'vue';
+import AnchorLink from '../UI/AnchorLink.vue';
 
 const props = defineProps({
   workElement: { type: Object as () => WorkElement, required: true },

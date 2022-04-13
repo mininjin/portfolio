@@ -1,3 +1,5 @@
+import { IconName } from "@fortawesome/fontawesome-common-types";
+
 export type Category =
   | "top"
   | "profile"
@@ -97,7 +99,7 @@ export type ContactContent = CategoryContent & {
 };
 
 export type ContactElement = {
-  icon: string;
+  icon: { name: IconName; color: string;  };
   name: string;
   href: string;
 };

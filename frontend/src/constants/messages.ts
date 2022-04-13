@@ -191,8 +191,13 @@ export const INITIAL_MESSAGES: Messages = {
       elements: [
         {
           name: "Twitter",
-          icon: "",
+          icon: { name: "twitter", color: "#1da1f2" },
           href: "https://twitter.com/Utan_Otouto",
+        },
+        {
+          name: "GitHub",
+          icon: { name: "github", color: "#333333" },
+          href: "https://github.com/mininjin",
         },
       ],
     },
