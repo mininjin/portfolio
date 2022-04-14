@@ -5,7 +5,11 @@ export const INITIAL_MESSAGES: Messages = {
     title: "Top",
     content: {
       text: {
-        value: { mobile: "0taUtan", desktop: "0taUtan's Portfolio" },
+        value: {
+          mobile: "Hi!",
+          tablet: "0taUtan",
+          desktop: "0taUtan's Portfolio",
+        },
         frontColor: "#eff0f3",
         sideColor: "#ffae8c",
         bouncingNumber: 2,

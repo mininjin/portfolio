@@ -2,12 +2,13 @@ import { ANIMATION_DERAY } from "./../constants/three";
 import { AnimationClip, Clock, Color, Light, Object3D } from "three";
 import setThree from "@/plugins/three";
 import { ref } from "vue";
-import { TopAnimationConfig } from "@/@types/schema";
+import { ResponsiveKey, TopAnimationConfig } from "@/@types/schema";
 import { getPlane, getLight, getTextGroup } from "@/plugins/three/objects";
 import {
   ANIMATION_DURATION,
   TEXT_FONT,
   TEXT_SIZE,
+  TEXT_FLOATING_RATE,
   THREE_BACKGROUND_COLOR,
 } from "@/constants/three";
 import {
@@ -15,6 +16,7 @@ import {
   getBouncingAnimationMixer,
   getRotatingAnimationKF,
 } from "@/plugins/three/animations";
+import { getResponsiveKeyFromWidth } from "@/plugins/responsive";
 
 export const useTopAnimation = () => {
   // animation keyframes
@@ -38,10 +40,13 @@ export const useTopAnimation = () => {
   // variables
   let lightElement: Light | undefined = undefined;
   let objects: Object3D[] = [];
+  let textValue = "";
+  let responsive: ResponsiveKey = "mobile";
   let animationInterval = 0;
+  let config: TopAnimationConfig | undefined = undefined;
 
   // set text objects and its animation
-  const setTopAnimation = (config: TopAnimationConfig) => {
+  const setTopAnimation = (topConfig: TopAnimationConfig) => {
     // clear interval
     if (animationInterval) clearInterval(animationInterval);
     // clear scene
@@ -49,9 +54,12 @@ export const useTopAnimation = () => {
       three.scene.remove(three.scene.children[0]);
     }
     // get config
+    config = topConfig;
     const { text, plane, spotLight } = config;
+    // get text value
+    responsive = getResponsiveKeyFromWidth(renderDOM.value?.clientWidth || 0);
+    textValue = text.value[responsive];
     // add text object
-    const textValue = text.value.mobile;
     const textObject = getTextGroup({
       value: textValue,
       frontColor: text.frontColor,
@@ -88,13 +96,17 @@ export const useTopAnimation = () => {
     //  add directional light
     const directionalLight = getLight({
       type: "directional",
-      position: [TEXT_SIZE * (textValue.length / 2), TEXT_SIZE, TEXT_SIZE * 10],
+      position: [
+        TEXT_SIZE * (textValue.length / 2) - TEXT_SIZE / 2,
+        TEXT_SIZE,
+        TEXT_SIZE * textValue.length * 3,
+      ],
       color: "#ffffff",
     });
     three.scene.add(directionalLight);
     //  add Plane
     const planeObject = getPlane({
-      position: [TEXT_SIZE * (textValue.length / 2), 0, 0],
+      position: [TEXT_SIZE * (textValue.length / 2) - TEXT_SIZE / 2, 0, 0],
       size: [TEXT_SIZE * textValue.length * 1.5, TEXT_SIZE * 7],
       color: plane.color,
       receiveShadow: true,
@@ -108,11 +120,16 @@ export const useTopAnimation = () => {
     three.renderer.shadowMap.enabled = true;
     // set camera position
     three.camera.position.set(
-      (TEXT_SIZE * textValue.length) / 2,
+      (TEXT_SIZE * textValue.length) / 2 - TEXT_SIZE / 2,
       TEXT_SIZE * 4,
-      TEXT_SIZE * 10
+      0
     );
-    three.camera.lookAt((TEXT_SIZE * textValue.length) / 2, TEXT_SIZE / 2, 0);
+    adjustCameraPositionZ();
+    three.camera.lookAt(
+      (TEXT_SIZE * textValue.length) / 2 - TEXT_SIZE / 2,
+      TEXT_SIZE / 2,
+      0
+    );
     // set animation
     let animationIndex = 0;
     let bouncingCount = 0;
@@ -123,13 +140,18 @@ export const useTopAnimation = () => {
         animationIndex = (animationIndex + 1) % textObject.children.length;
       }
       // set mixer
+      const object = objects[animationIndex];
       const mixer = getBouncingAnimationMixer({
-        object: objects[animationIndex],
+        object,
         clip:
           bouncingCount >= text.bouncingNumber - 1
             ? bouncingRotatingClip
             : bouncingClip,
         finishCallback: () => {
+          // initialize position
+          object.position.y = TEXT_SIZE * TEXT_FLOATING_RATE;
+          object.rotation.y = 0;
+          // increase count
           bouncingCount++;
         },
       });
@@ -145,12 +167,34 @@ export const useTopAnimation = () => {
       (ANIMATION_DURATION + ANIMATION_DERAY) * 1000
     );
   };
+  // set camera position by referring to camera fov and aspect
+  const adjustCameraPositionZ = () => {
+    const viewWidth = TEXT_SIZE * textValue.length * 1.5;
+    const viewHeight = viewWidth / three.camera.aspect;
+    const fov = (three.camera.fov * Math.PI) / 180;
+    three.camera.position.z = viewHeight / (Math.tan(fov / 2) * 2);
+  };
 
   // set spot light position when scrolling
   window.addEventListener("scroll", () => {
     const rate = window.scrollY / window.innerHeight;
     if (lightElement) {
       lightElement.position.x = TEXT_SIZE * objects.length * (2 * rate - 1 / 2);
+    }
+  });
+  // when resizing
+  window.addEventListener("resize", () => {
+    // reset drawer size
+    three.setSize();
+    // check responsive
+    if (
+      responsive == getResponsiveKeyFromWidth(renderDOM.value?.clientWidth || 0)
+    ) {
+      // adjust camera position
+      adjustCameraPositionZ();
+    } else {
+      // reset objects
+      if (config) setTopAnimation(config);
     }
   });
 

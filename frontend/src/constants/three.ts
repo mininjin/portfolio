@@ -17,3 +17,4 @@ export const TEXT_GEOMETRY_PARAMETERS: Partial<TextGeometryParameters> = {
   bevelSegments: 2,
 };
 export const TEXT_FLOATING_RATE = 0.1;
+export const RESPONSIVE_WIDTH = { desktop: 850, tablet: 500 };

@@ -45,10 +45,7 @@ const setThree = (container: Ref<HTMLElement | undefined>) => {
     frame();
   };
 
-  // reset drawer size when resizing
-  window.addEventListener("resize", setSize);
-
-  return { init, scene, camera, renderer, setAnimationCallback };
+  return { init, scene, camera, renderer, setAnimationCallback, setSize };
 };
 
 export default setThree;

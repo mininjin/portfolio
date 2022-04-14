@@ -1,5 +1,7 @@
 import { IconName } from "@fortawesome/fontawesome-common-types";
 
+export type ResponsiveKey = "desktop" | "tablet" | "mobile";
+
 export type Category =
   | "top"
   | "profile"
@@ -27,7 +29,7 @@ export type TopContent = SectionContent & {
 };
 export type TopAnimationConfig = {
   text: {
-    value: { mobile: string; desktop: string };
+    value: Record<ResponsiveKey, string>;
     frontColor: string;
     sideColor: string;
     bouncingNumber: number;
