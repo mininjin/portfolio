@@ -2,12 +2,14 @@
   <div>
     <HeaderComponent />
     <TopView />
-    <ProfileView />
-    <SkillsView />
-    <CareerView />
-    <WorksView />
-    <ContactView />
-    <FooterComponent />
+    <div class="z-10">
+      <ProfileView />
+      <SkillsView />
+      <CareerView />
+      <WorksView />
+      <ContactView />
+      <FooterComponent />
+    </div>
   </div>
 </template>
 

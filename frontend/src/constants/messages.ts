@@ -4,7 +4,14 @@ export const INITIAL_MESSAGES: Messages = {
   top: {
     title: "Top",
     content: {
-      message: "0ta Utan's Portfolio",
+      text: {
+        value: { mobile: "0taUtan", desktop: "0taUtan's Portfolio" },
+        frontColor: "#eff0f3",
+        sideColor: "#ffae8c",
+        bouncingNumber: 2,
+      },
+      spotLight: { color: "#ff8e3c" },
+      plane: { color: "#aaaaaa" },
     },
   },
   profile: {

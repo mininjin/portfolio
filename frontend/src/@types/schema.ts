@@ -17,18 +17,26 @@ export type Messages = {
   contacts: ContactContent;
 };
 
-type CategoryContent = {
-  title?: string;
+type SectionContent = {
+  title: string;
   direction?: VerticalPosition;
 };
 
-export type TopContent = CategoryContent & {
-  content: {
-    message: string;
+export type TopContent = SectionContent & {
+  content: TopAnimationConfig;
+};
+export type TopAnimationConfig = {
+  text: {
+    value: { mobile: string; desktop: string };
+    frontColor: string;
+    sideColor: string;
+    bouncingNumber: number;
   };
+  spotLight: { color: string };
+  plane: { color: string };
 };
 
-export type ProfileContent = CategoryContent & {
+export type ProfileContent = SectionContent & {
   content: {
     image: string;
     name: string;
@@ -38,7 +46,7 @@ export type ProfileContent = CategoryContent & {
   };
 };
 
-export type SkillsContent = CategoryContent & {
+export type SkillsContent = SectionContent & {
   content: {
     elements: SkillElement[];
   };
@@ -53,7 +61,7 @@ export type SkillElement = {
 
 export type ChartObject = { name: string; value: 0 | 1 | 2 | 3 | 4 | 5 };
 
-export type CareerContent = CategoryContent & {
+export type CareerContent = SectionContent & {
   content: {
     blocks: CareerBlock[];
     message: string;
@@ -77,7 +85,7 @@ export type CareerText = {
 
 export type CareerImage = { type: "image"; src: string; alt: string };
 
-export type WorksContent = CategoryContent & {
+export type WorksContent = SectionContent & {
   content: {
     elements: WorkElement[];
   };
@@ -92,14 +100,14 @@ export type WorkElement = {
   color: string;
 };
 
-export type ContactContent = CategoryContent & {
+export type ContactContent = SectionContent & {
   content: {
     elements: ContactElement[];
   };
 };
 
 export type ContactElement = {
-  icon: { name: IconName; color: string;  };
+  icon: { name: IconName; color: string };
   name: string;
   href: string;
 };

@@ -37,7 +37,7 @@
 import { WorkElement } from '@/@types/schema';
 import { IMAGE_DIR, WORK_BACKGROUND_OPACITY } from '@/constants/application';
 import { isInContent } from '@/plugins/checkScroll';
-import { setOpacity } from '@/plugins/opacity';
+import { setOpacity } from '@/plugins/utils';
 import { computed, onMounted, ref } from 'vue';
 import AnchorLink from '../UI/AnchorLink.vue';
 

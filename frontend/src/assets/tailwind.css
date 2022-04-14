@@ -6,9 +6,14 @@
   --primary-color: #fffffe;
   --secondary-color: #eff0f3;
   --tertiary-color: #d9376e;
-  --tertiary-color-5: #d9376e80;
   --highlight-color: #ff8e3c;
-  --highlight-color-5: #ff8e3c80;
+  --primary-color-5: #fffffe7f;
+  --secondary-color-5: #eff0f37f;
+  --tertiary-color-5: #d9376e7f;
+  --highlight-color-5: #ff8e3c7f;
+  --primary-color-75: #fffffebf;
+  --secondary-color-75: #eff0f3bf;
+  --tertiary-color-75: #d9376ebf;
   --highlight-color-75: #ff8e3cc0;
   --title-font: "Grape Nuts", cursive;
   --subtitle-font: "Kaisei HarunoUmi", serif;
