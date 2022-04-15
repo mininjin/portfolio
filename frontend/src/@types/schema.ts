@@ -67,7 +67,7 @@ export type ChartObject = { name: string; value: 0 | 1 | 2 | 3 | 4 | 5 };
 export type CareerContent = SectionContent & {
   content: {
     blocks: CareerBlock[];
-    message: string;
+    comment: { title: string; message: string[]; signature: string };
   };
 };
 

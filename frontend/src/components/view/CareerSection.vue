@@ -12,18 +12,19 @@
         <div class="px-5 mb-10 overflow-x-hidden">
           <div
             :class="`transition-all duration-300 ${inContainer ? '' : 'opacity-0 ' + (position == 'left' ? '-translate-x-10' : 'translate-x-10')}`">
-            <div v-for="item in block.data" class="mb-2">
+            <div v-for="item in block.data" class="mb-4">
               <div v-if="item.type == 'text'">
                 <div class="text-sm mb-2">{{ item.term }}</div>
                 <div class="text-2xl font-subtitle mb-2">{{ item.title }}</div>
                 <div v-if="item.explanation" class="mb-2">{{ item.explanation }}</div>
               </div>
-              <img v-else-if="item.type == 'image'" :src="item.src" :alt="item.alt" class="h-40 object-contain mx-auto">
+              <img v-else-if="item.type == 'image'" :src="getImageSrc(item.src)" :alt="item.alt"
+                class="w-full max-h-72 object-contain mx-auto">
             </div>
           </div>
         </div>
       </div>
-      <div class="w-3 bg-primary shadow-bar-vertical relative">
+      <div class="w-3 bg-primary shadow-bar-vertical relative flex-shrink-0">
         <div class="w-full bg-highlight transition-all z-10" :style="{ height: barHeight + '%' }">
         </div>
         <div v-if="iconPositionY >= 0 && iconPositionY <= 100" class="absolute flex items-center left-0 z-20"
@@ -41,6 +42,7 @@
 import { CareerBlock } from '@/@types/schema';
 import { isInContent } from '@/plugins/checkScroll';
 import { normalizeNumber } from '@/plugins/utils';
+import { getImageSrc } from '@/plugins/image';
 import { onMounted, ref } from 'vue';
 
 const props = defineProps({

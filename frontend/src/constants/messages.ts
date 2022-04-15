@@ -91,18 +91,20 @@ export const INITIAL_MESSAGES: Messages = {
               type: "text",
               term: "1996-",
               title: "Birth",
-              explanation: "ここに説明文が入ります。",
+              explanation:
+                "鳥取県の一般家庭の男4兄弟の次男として生を受ける。忙しい両親に代わって祖母と兄に育てられる。",
             },
             {
               type: "image",
-              src: "",
-              alt: "",
+              src: "family.webp",
+              alt: "最愛の家族",
             },
             {
               type: "text",
               term: "2003-2016",
               title: "Elementary - High School",
-              explanation: "ここに説明文が入ります。",
+              explanation:
+                "小中高とサッカーを続ける。環境に恵まれすくすくと成長。",
             },
           ],
         },
@@ -114,18 +116,20 @@ export const INITIAL_MESSAGES: Messages = {
               type: "text",
               term: "2016-2021",
               title: "Undergraduate - Master",
-              explanation: "ここに説明文が入ります。",
+              explanation:
+                "名古屋大学理学部にて数理物理学者を目指す。修士論文にて多元論文章を受賞。",
             },
             {
               type: "image",
-              src: "",
-              alt: "",
+              src: "research.webp",
+              alt: "数理物理学",
             },
             {
               type: "text",
               term: "2021",
               title: "Make Decision",
-              explanation: "ここに説明文が入ります。",
+              explanation:
+                "末っ子の受験失敗を機にお金の大事さを知り、起業を目指すことを決意。スキルを得るために就職を決める。",
             },
           ],
         },
@@ -137,18 +141,20 @@ export const INITIAL_MESSAGES: Messages = {
               type: "text",
               term: "2021-2022",
               title: "Working as SE",
-              explanation: "ここに説明文が入ります。",
+              explanation:
+                "東京の一部上場企業にてSEとして勤務。その傍らTypeScriptやAWSについて独学し、それを実戦投入。クライアントから高い評価を得て次期案件につなげる。",
             },
             {
               type: "image",
-              src: "",
-              alt: "",
+              src: "sns_marketing.webp",
+              alt: "SNSマーケ",
             },
             {
               type: "text",
               term: "2021-",
               title: "SNS Marketing",
-              explanation: "ここに説明文が入ります。",
+              explanation:
+                "Twitterでマーケの師匠と出会う。起業には開発スキル以上にマーケスキルも必須だと教わり、SNSマーケを学ぶ。",
             },
           ],
         },
@@ -158,13 +164,21 @@ export const INITIAL_MESSAGES: Messages = {
           data: [
             {
               type: "text",
-              term: "2021-2022",
+              term: "2022-",
               title: "And My Own Business...",
             },
           ],
         },
       ],
-      message: "ここにキャリアのメッセージが入ります。",
+      comment: {
+        title: "開発の楽しさと人生の目的",
+        message: [
+          "私のキャリアはまだ始まったばかりです。駆け出しの若輩者なので、周りの先輩方からどんどん技術を盗んでいきます。常にチャレンジ精神を忘れず新しいことに貪欲に挑戦し続けます。",
+          "至らぬ点も多いので、間違いも多く犯してしまうかもしれません。指摘されたことをすぐに修正し、失敗を自分の糧とできるよう心がけます。",
+          "最後に、私の人生は兄弟無くしては語れません。だからこそ地元に戻って起業し、兄弟みんなで支え合う道を選びました。兄弟全員が自分らしい人生を歩めるように支えていくのが私の人生の目的です。",
+        ],
+        signature: "Utan",
+      },
     },
   },
   works: {
