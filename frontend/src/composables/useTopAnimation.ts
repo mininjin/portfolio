@@ -17,6 +17,7 @@ import {
   getRotatingAnimationKF,
 } from "@/plugins/three/animations";
 import { getResponsiveKeyFromWidth } from "@/plugins/responsive";
+import { getColorHexFromString } from "@/plugins/utils";
 
 export const useTopAnimation = () => {
   // animation keyframes
@@ -55,7 +56,7 @@ export const useTopAnimation = () => {
     }
     // get config
     config = topConfig;
-    const { text, plane, spotLight } = config;
+    const { text, plane, spotLight, background } = config;
     // get text value
     responsive = getResponsiveKeyFromWidth(renderDOM.value?.clientWidth || 0);
     textValue = text.value[responsive];
@@ -113,9 +114,7 @@ export const useTopAnimation = () => {
     });
     three.scene.add(planeObject);
     // set background
-    three.scene.background = new Color(
-      parseInt(THREE_BACKGROUND_COLOR.replace("#", ""), 16)
-    );
+    three.scene.background = new Color(getColorHexFromString(background.color));
     // add shadow
     three.renderer.shadowMap.enabled = true;
     // set camera position

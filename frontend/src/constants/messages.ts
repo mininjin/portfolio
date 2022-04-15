@@ -4,18 +4,22 @@ export const INITIAL_MESSAGES: Messages = {
   top: {
     title: "Top",
     content: {
-      text: {
-        value: {
-          mobile: "Hi!",
-          tablet: "0taUtan",
-          desktop: "0taUtan's Portfolio",
+      message: "Welcome to Utan's Portfolio",
+      animation: {
+        text: {
+          value: {
+            mobile: "Hi!",
+            tablet: "0taUtan",
+            desktop: "0taUtan's Portfolio",
+          },
+          frontColor: "#eff0f3",
+          sideColor: "#ffae8c",
+          bouncingNumber: 2,
         },
-        frontColor: "#eff0f3",
-        sideColor: "#ffae8c",
-        bouncingNumber: 2,
+        background: { color: "#ffe0cc" },
+        spotLight: { color: "#ff8e3c" },
+        plane: { color: "#aaaaaa" },
       },
-      spotLight: { color: "#ff8e3c" },
-      plane: { color: "#aaaaaa" },
     },
   },
   profile: {

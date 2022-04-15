@@ -25,7 +25,7 @@ type SectionContent = {
 };
 
 export type TopContent = SectionContent & {
-  content: TopAnimationConfig;
+  content: { message: string; animation: TopAnimationConfig };
 };
 export type TopAnimationConfig = {
   text: {
@@ -34,6 +34,7 @@ export type TopAnimationConfig = {
     sideColor: string;
     bouncingNumber: number;
   };
+  background: { color: string };
   spotLight: { color: string };
   plane: { color: string };
 };
