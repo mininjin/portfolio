@@ -17,4 +17,4 @@ export const CHART_RANGE: Record<"min" | "max", ChartObject["value"]> = {
   max: 5,
 };
 export const VALID_CONTENT_WINDOW_RATE = 3 / 4;
-export const WORK_BACKGROUND_OPACITY = 0.5;
+export const WORK_BACKGROUND_OPACITY = 0.75;

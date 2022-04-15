@@ -182,7 +182,7 @@ export const INITIAL_MESSAGES: Messages = {
         },
         {
           title: "スマホ向けUIテストアプリ",
-          src: "",
+          src: "ui_test.webp",
           href: "https://aoya-cafe-berry.com",
           information: [],
           caption: "ここに詳細が入ります。",
