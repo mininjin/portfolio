@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary.75 py-5" ref="container">
+  <div class=" bg-gradient-to-b from-secondary.75 to-secondary py-5" ref="container">
     <div v-if="message" class="max-w-4xl px-5 py-10 mx-auto">
       <SectionTitle :title="message.title || ''" :direction="message.direction || 'left'" />
       <div

@@ -85,7 +85,7 @@ export const INITIAL_MESSAGES: Messages = {
       blocks: [
         {
           position: "right",
-          animationType: "gradual",
+          margin: false,
           data: [
             {
               type: "text",
@@ -108,7 +108,7 @@ export const INITIAL_MESSAGES: Messages = {
         },
         {
           position: "left",
-          animationType: "gradual",
+          margin: false,
           data: [
             {
               type: "text",
@@ -131,7 +131,7 @@ export const INITIAL_MESSAGES: Messages = {
         },
         {
           position: "right",
-          animationType: "gradual",
+          margin: false,
           data: [
             {
               type: "text",
@@ -154,7 +154,7 @@ export const INITIAL_MESSAGES: Messages = {
         },
         {
           position: "right",
-          animationType: "at-once",
+          margin: true,
           data: [
             {
               type: "text",
@@ -190,7 +190,7 @@ export const INITIAL_MESSAGES: Messages = {
         },
         {
           title: "ポートフォリオ",
-          src: "",
+          src: "portfolio.webp",
           href: "https://aoya-cafe-berry.com",
           information: [],
           caption: "ここに詳細が入ります。",

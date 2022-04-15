@@ -74,10 +74,8 @@ export type CareerContent = SectionContent & {
 export type CareerBlock = {
   position: VerticalPosition;
   data: (CareerText | CareerImage)[];
-  animationType: CareerAnimationType;
+  margin: boolean;
 };
-
-export type CareerAnimationType = "gradual" | "at-once";
 
 export type CareerText = {
   type: "text";

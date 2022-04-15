@@ -1,7 +1,7 @@
 <template>
   <div class="fixed bottom-0 md:top-0 left-0 w-full z-40 text-primary shadow">
     <div class="flex w-full bg-highlight items-center">
-      <div class="p-2 text-left flex-auto text-xl font-bold">{{ APP_NAME }}</div>
+      <div class="p-2 text-left flex-auto text-3xl font-title">{{ APP_NAME }}</div>
       <div class="p-2 flex justify-center items-center" @click="toggleMenu">
         <MenuButton :on="menu" />
       </div>
