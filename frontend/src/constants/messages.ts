@@ -31,7 +31,7 @@ export const INITIAL_MESSAGES: Messages = {
       name: "おおた ゆうや",
       birth: "1996-05-24",
       comment:
-        "鳥取県出身のWebエンジニア。新卒2年目にして自分の事業を立てるために地元に帰ったやつ。数理学修士（専攻は数理物理学、論文賞受賞歴アリ）好きな言語=TypeScript。基本/応用情報技術者。",
+        "鳥取県出身のWebエンジニア。新卒2年目にして家族と事業を立てるために地元に帰る。数理学修士（専攻は数理物理学、論文賞受賞歴アリ）好きな言語=TypeScript。基本/応用情報技術者。ユーモラスな人間になりたい。",
     },
   },
   skills: {
@@ -41,37 +41,41 @@ export const INITIAL_MESSAGES: Messages = {
       elements: [
         {
           title: "Front End",
-          caption: "スキルの説明文が入ります。",
+          caption:
+            "実務の割合はフロントエンドが最多。Vue3(Composition API)でのSPA開発がほとんど。Nuxt3は勉強中。SASSよりTailwindCSS。モバイルファースト。型付けは正義。",
           chart: [
             { name: "Vanilla HTML/CSS", value: 3 },
             { name: "Vanilla JS", value: 3 },
-            { name: "Vanilla TS", value: 3 },
             { name: "Vue/Nuxt", value: 4 },
-            { name: "React", value: 1 },
             { name: "TailwindCSS", value: 3 },
+            { name: "React", value: 1 },
+            { name: "Vanilla TS", value: 3 },
           ],
           color: "#d9376e",
         },
         {
           title: "Back End",
-          caption: "スキルの説明文が入ります。",
+          caption:
+            "基本的にAWSのサーバーレス構成しかやらない。Severless Frameworkの実務経験(3ヶ月)がある。Pythonでアルゴリズム設計の実務経験もある。",
           chart: [
             { name: "Serverless Framework", value: 3 },
-            { name: "Node", value: 3 },
             { name: "AWS", value: 3 },
             { name: "Python", value: 2 },
+            { name: "Node", value: 3 },
             { name: "PHP", value: 1 },
           ],
           color: "#ff8906",
         },
         {
           title: "Tools",
-          caption: "スキルの説明文が入ります。",
+          caption:
+            "開発用エディターはVSCode。Vimは新人研修で3ヶ月やらされたのみ。WordPressは自分のブログを少しいじれる程度。",
           chart: [
             { name: "WordPress", value: 2 },
             { name: "Git", value: 3 },
+            { name: "Vim", value: 1 },
             { name: "VSCode", value: 3 },
-            { name: "Linux", value: 3 },
+            { name: "Linux", value: 1 },
           ],
           color: "#078080",
         },
@@ -129,7 +133,7 @@ export const INITIAL_MESSAGES: Messages = {
               term: "2021",
               title: "Make Decision",
               explanation:
-                "末っ子の受験失敗を機にお金の大事さを知り、起業を目指すことを決意。スキルを得るために就職を決める。",
+                "末っ子の受験失敗を機にお金の大事さを知り、研究者を諦める。そして起業を目指すことを決意。まずは最低限のスキルを得るために就職を決める。",
             },
           ],
         },
@@ -173,8 +177,8 @@ export const INITIAL_MESSAGES: Messages = {
       comment: {
         title: "開発の楽しさと人生の目的",
         message: [
-          "私のキャリアはまだ始まったばかりです。駆け出しの若輩者なので、周りの先輩方からどんどん技術を盗んでいきます。常にチャレンジ精神を忘れず新しいことに貪欲に挑戦し続けます。",
-          "至らぬ点も多いので、間違いも多く犯してしまうかもしれません。指摘されたことをすぐに修正し、失敗を自分の糧とできるよう心がけます。",
+          "開発は楽しいです。ですが楽しいだけでは生きていけません。だからこそマーケを学んでいます。自分の技術を誰かの悩み解決に活かせるよう、試行錯誤を繰り返していきます。",
+          "私のキャリアはまだ始まったばかりです。至らぬ点も多いので、間違いも多く犯してしまうかもしれません。それでもめげずに周りの先輩方からどんどん技術を盗んでいきたいと思います。常にチャレンジ精神を忘れず新しいことに貪欲に挑戦し続けます。",
           "最後に、私の人生は兄弟無くしては語れません。だからこそ地元に戻って起業し、兄弟みんなで支え合う道を選びました。兄弟全員が自分らしい人生を歩めるように支えていくのが私の人生の目的です。",
         ],
         signature: "Utan",
@@ -190,9 +194,10 @@ export const INITIAL_MESSAGES: Messages = {
           title: "実家のWebサイト",
           images: [
             { src: "aoya_cafe_berry/top.webp", alt: "トップ" },
-            { src: "ui_test/top.webp", alt: "トップ" },
-            { src: "aoya_cafe_berry/top.webp", alt: "トップ" },
-            { src: "aoya_cafe_berry/top.webp", alt: "トップ" },
+            { src: "aoya_cafe_berry/concept.webp", alt: "コンセプト" },
+            { src: "aoya_cafe_berry/foods.webp", alt: "食事" },
+            { src: "aoya_cafe_berry/footer.webp", alt: "フッター" },
+            { src: "aoya_cafe_berry/loading.webp", alt: "トップ" },
           ],
           href: "https://aoya-cafe-berry.com",
           information: [
@@ -201,26 +206,54 @@ export const INITIAL_MESSAGES: Messages = {
               title: "開発言語など",
               detail: "Vue, TypeScript, TailwindCSS",
             },
-            { title: "プラットフォーム", detail: "AWS(S3, Cloudfront)" },
+            { title: "プラットフォーム", detail: "AWS S3, Cloudfront" },
           ],
-          caption: "ここに詳細が入ります。",
+          caption:
+            "実家のレストランのWebサイト。モバイルファースト。優しげなゆったりとしたサイトを意識。アニメーションもゆっくりめで作成。静的サイトにして運用コストを月数十円に抑えた。",
           color: { theme: "#a61c00", button: "#a61c00" },
         },
         {
           title: "スマホ向けUIテストアプリ",
           images: [
-            { src: "ui_test/top.webp", alt: "トップ" }
+            { src: "ui_test/top.webp", alt: "UI TEST トップ" },
+            { src: "ui_test/select.webp", alt: "選択式" },
+            { src: "ui_test/seek_bar.webp", alt: "シークバー" },
+            { src: "ui_test/number.webp", alt: "数値選択" },
+            { src: "ui_test/barcode.webp", alt: "バーコードリーダー" },
+            { src: "ui_test/menu.webp", alt: "メニュー" },
           ],
-          href: "https://aoya-cafe-berry.com",
-          information: [],
-          caption: "ここに詳細が入ります。",
+          href: "https://0ta-utan.com/questionnaire/index.html",
+          information: [
+            { title: "開発期間", detail: "5日（50h）" },
+            {
+              title: "開発言語など",
+              detail:
+                "Vue, TypeScript, TailwindCSS, (Node, Serverless Framework)",
+            },
+            {
+              title: "プラットフォーム",
+              detail: "AWS S3, Cloudfront, (DynamoDB, API Gateway, Lambda)",
+            },
+          ],
+          caption:
+            "実務で作ったアンケートアプリのUI部分のみを抽出して再デザイン・再設計したアプリ。直感的に選択肢を選ばせたり、VAS形式で回答させる方法にこだわった。また、QuaggaJSによるバーコードリーダーも実装。動的に設問を生成しているため、自由に設問を編集することが可能。実務ではさらにバックエンドのREST APIを作成。括弧書きは実務で使用したもの。",
           color: { theme: "#bae8e8", button: "#272343" },
         },
         {
           title: "ポートフォリオ",
           images: [{ src: "portfolio/top.webp", alt: "トップ" }],
           href: "https://0ta-utan.com",
-          information: [],
+          information: [
+            { title: "開発期間", detail: "8日（60h）" },
+            {
+              title: "開発言語など",
+              detail: "Vue, TypeScript, TailwindCSS, Three.js",
+            },
+            {
+              title: "プラットフォーム",
+              detail: "AWS S3, Cloudfront",
+            },
+          ],
           caption: "ここに詳細が入ります。",
           color: { theme: "#ff8e3c", button: "#d9376e" },
         },

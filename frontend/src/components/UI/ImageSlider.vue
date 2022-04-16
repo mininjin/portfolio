@@ -1,19 +1,18 @@
 <template>
-  <div class="w-full h-full relative overflow-x-hidden md:overflow-x-scroll" ref="container">
-    <div class="h-full transition-all flex space-x-4 items-center relative"
+  <div class="w-full h-full relative overflow-x-hidden" ref="container">
+    <div class="h-full transition-all ease-in-out duration-500 flex space-x-4 items-center relative"
       :style="{ transform: `translateX(${-leftOffset}px)` }">
       <img v-for="image in images" :key="image.key" :src="image.src" :alt="image.alt"
         class="h-full object-contain object-center" :ref="setImageDOMs">
     </div>
-    <button
-      :class="`absolute bounce-left top-0 left-2 h-full ${index > 0 ? 'inline-flex' : 'opacity-0'} items-center md:hidden`"
+    <button :class="`absolute bounce-left top-0 left-2 h-full ${index > 0 ? 'inline-flex' : 'opacity-0'} items-center `"
       :style="{ color, }" @click="onClick(-1)">
-      <font-awesome-icon icon="circle-chevron-left" class="w-5" />
+      <font-awesome-icon icon="circle-chevron-left" class="w-5 md:w-7" />
     </button>
     <button
-      :class="`absolute bounce-right top-0 right-2 h-full ${index < images.length - 1 ? 'inline-flex' : 'opacity-0'} items-center md:hidden`"
+      :class="`absolute bounce-right top-0 right-2 h-full ${index < images.length - 1 ? 'inline-flex' : 'opacity-0'} items-center `"
       :style="{ color, }" @click="onClick(1)">
-      <font-awesome-icon icon="circle-chevron-right" class="w-5" />
+      <font-awesome-icon icon="circle-chevron-right" class="w-5 md:w-7" />
     </button>
   </div>
 </template>
@@ -41,11 +40,15 @@ const setImageDOMs = (el: any) => {
 
 const index = ref(0);
 const leftOffset = ref(0);
-const onClick = (direction: 1 | -1) => {
-  index.value = normalizeNumber(index.value + direction, { max: images.value.length - 1, min: 0 });
+const setLeftOffset = () => {
   const imageDOM = imageDOMs[index.value]
   leftOffset.value = imageDOM.offsetLeft
 }
+const onClick = (direction: 1 | -1) => {
+  index.value = normalizeNumber(index.value + direction, { max: images.value.length - 1, min: 0 });
+  setLeftOffset();
+}
+window.addEventListener("resize", setLeftOffset);
 </script>
 
 <style scoped>
@@ -58,30 +61,30 @@ const onClick = (direction: 1 | -1) => {
 }
 
 @keyframes bounce-left {
-  0% {
-    transform: translateX(0);
+
+  0%,
+  100% {
+    transform: translateX(25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
 
   50% {
-    transform: translateX(-0.5rem);
-  }
-
-  100% {
-    transform: translateX(0);
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
 @keyframes bounce-right {
-  0% {
-    transform: translateX(0);
+
+  0%,
+  100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
 
   50% {
-    transform: translateX(0.5rem);
-  }
-
-  100% {
-    transform: translateX(0);
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 </style>

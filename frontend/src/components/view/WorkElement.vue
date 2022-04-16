@@ -3,7 +3,7 @@
     <div :class="`transition-all duration-300 ${on ? '' : 'translate-y-10 opacity-0'}`">
       <div class="cursor-pointer" @click="toggleModal">
         <div class="p-2 flex items-center justify-center">Click
-          <font-awesome-icon icon="hand-point-down" class="w-4 ml-2" />
+          <font-awesome-icon icon="hand-point-down" class="w-4 ml-2 animate-bounce" />
         </div>
         <img v-if="src" :src="src" :alt="workElement.title" class="w-full object-contain mb-4">
       </div>
