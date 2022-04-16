@@ -4,7 +4,9 @@ import {
   faArrowUpRightFromSquare,
   faCheck,
   faHandPointDown,
-  fas,
+  faCircleChevronLeft,
+  faCircleChevronRight,
+  faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import FontAwesomeIcon from "./FontAwesomeIcon.vue";
 
@@ -14,6 +16,9 @@ library.add(
   faArrowUpRightFromSquare,
   faCheck,
   faHandPointDown,
+  faCircleChevronLeft,
+  faCircleChevronRight,
+  faCircleXmark
 );
 
 export { FontAwesomeIcon };

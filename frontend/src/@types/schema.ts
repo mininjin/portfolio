@@ -94,12 +94,14 @@ export type WorksContent = SectionContent & {
 
 export type WorkElement = {
   title: string;
-  src: string;
+  images: ImagePayload[];
   href: string;
   information: { title: string; detail: string }[];
   caption: string;
-  color: string;
+  color: { theme: string; button: string };
 };
+
+export type ImagePayload = { src: string; alt: string };
 
 export type ContactContent = SectionContent & {
   content: {

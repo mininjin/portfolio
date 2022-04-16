@@ -188,27 +188,41 @@ export const INITIAL_MESSAGES: Messages = {
       elements: [
         {
           title: "実家のWebサイト",
-          src: "aoya_cafe_berry.webp",
+          images: [
+            { src: "aoya_cafe_berry/top.webp", alt: "トップ" },
+            { src: "ui_test/top.webp", alt: "トップ" },
+            { src: "aoya_cafe_berry/top.webp", alt: "トップ" },
+            { src: "aoya_cafe_berry/top.webp", alt: "トップ" },
+          ],
           href: "https://aoya-cafe-berry.com",
-          information: [{ title: "開発期間", detail: "1週間（60h）" }],
+          information: [
+            { title: "開発期間", detail: "7日（60h）" },
+            {
+              title: "開発言語など",
+              detail: "Vue, TypeScript, TailwindCSS",
+            },
+            { title: "プラットフォーム", detail: "AWS(S3, Cloudfront)" },
+          ],
           caption: "ここに詳細が入ります。",
-          color: "#a61c00",
+          color: { theme: "#a61c00", button: "#a61c00" },
         },
         {
           title: "スマホ向けUIテストアプリ",
-          src: "ui_test.webp",
+          images: [
+            { src: "ui_test/top.webp", alt: "トップ" }
+          ],
           href: "https://aoya-cafe-berry.com",
           information: [],
           caption: "ここに詳細が入ります。",
-          color: "#bae8e8",
+          color: { theme: "#bae8e8", button: "#272343" },
         },
         {
           title: "ポートフォリオ",
-          src: "portfolio.webp",
-          href: "https://aoya-cafe-berry.com",
+          images: [{ src: "portfolio/top.webp", alt: "トップ" }],
+          href: "https://0ta-utan.com",
           information: [],
           caption: "ここに詳細が入ります。",
-          color: "#ff8e3c",
+          color: { theme: "#ff8e3c", button: "#d9376e" },
         },
       ],
     },
