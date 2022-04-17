@@ -11,6 +11,8 @@ interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string;
   readonly VITE_FOOTER_MESSAGE: string;
   readonly VITE_COPYRIGHT: string;
+  readonly VITE_LOADING_ANIMATION_ID: string;
+  readonly VITE_LOADING_PROGRESS_BAR_ID: string;
 }
 
 interface ImportMeta {

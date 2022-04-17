@@ -11,16 +11,27 @@
 import { inject, ref, computed, onMounted } from 'vue';
 import { STATE_KEY } from '@/store';
 import { useTopAnimation } from '@/composables/useTopAnimation';
+import { useLoadingAnimation } from '@/composables/useLoadingAnimation';
+import { FONT_URL } from "@/constants/three"
+import { LOADING_PROGRESS_RATE, PROGRESS_END } from "@/constants/loading"
 
 const store = inject(STATE_KEY);
 const message = computed(() => store?.state.value.messages?.top);
 const { renderDOM, init, setTopAnimation } = useTopAnimation();
+const { setProgress } = useLoadingAnimation();
 const container = ref<HTMLElement>();
 onMounted(async () => {
   if (container.value) store?.mutations.setCategoryContainer("top", container.value);
+  setProgress(LOADING_PROGRESS_RATE.onMounted);
   await store?.actions.fetchMessages();
   if (renderDOM.value) init();
-  if (message.value) setTopAnimation(message.value.content.animation);
+  setProgress(LOADING_PROGRESS_RATE.onFetchedMessage);
+  const fontRes = await fetch(FONT_URL);
+  setProgress(LOADING_PROGRESS_RATE.onFetchedFont);
+  const font = await fontRes.json();
+  setProgress(LOADING_PROGRESS_RATE.onCreatedFont);
+  if (message.value) setTopAnimation(message.value.content.animation, font);
+  setProgress(PROGRESS_END);
 });
 
 </script>

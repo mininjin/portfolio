@@ -1,9 +1,7 @@
-import font from "./font.json";
-import { Font } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometryParameters } from "three/examples/jsm/geometries/TextGeometry";
 
 // constants
-export const TEXT_FONT = new Font(font);
+export const FONT_URL = "/three/font.json";
 export const TEXT_SIZE = 20;
 export const TEXT_HEIGHT_RATE = 0.3;
 export const ANIMATION_DURATION = 0.5;

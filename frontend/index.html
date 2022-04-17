@@ -19,8 +19,40 @@
       href="https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Kaisei+HarunoUmi:wght@700&family=Noto+Serif+JP:wght@200&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/loading.css" />
   </head>
   <body>
+    <div
+      id="<%- loadingAnimationId %>"
+      class="transition-all duration-500 fixed z-100 bg-secondary w-full h-full top-0 left-0 text-white flex flex-col items-center justify-center"
+    >
+      <div class="flex items-center justify-center relative mb-10 h-52 w-52">
+        <div
+          class="absolute w-full h-full flex items-center justify-center top-0"
+        >
+          <span
+            class="absolute rounded-full bg-tertiary loading-animation-dots"
+          ></span>
+          <span
+            class="absolute rounded-full bg-highlight loading-animation-dots loading-dots-1"
+          ></span>
+          <span
+            class="loading-animation-loading font-title text-2xl text-tertiary"
+            >LOADING</span
+          >
+        </div>
+      </div>
+      <div class="w-72 h-10 p-2">
+        <div
+          class="h-full bg-tertiary relative rounded-xl border-4 border-tertiary overflow-hidden shadow-xl"
+        >
+          <div
+            id="<%- loadingProgressBarId %>"
+            class="absolute h-full bg-highlight transition-all duration-300"
+          ></div>
+        </div>
+      </div>
+    </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

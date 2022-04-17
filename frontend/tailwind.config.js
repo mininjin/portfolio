@@ -21,6 +21,9 @@ const config = {
       spacing: {
         4.5: "1.125rem",
       },
+      zIndex: {
+        100: 100,
+      },
       fontFamily: {
         title: "var(--title-font)",
         subtitle: "var(--subtitle-font)",

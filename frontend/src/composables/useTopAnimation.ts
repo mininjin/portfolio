@@ -7,7 +7,6 @@ import {
   ANIMATION_DERAY,
   BOUNCING_MAX_Y,
   ANIMATION_DURATION,
-  TEXT_FONT,
   TEXT_SIZE,
   TEXT_FLOATING_RATE,
   PLANE_PADDING_TEXT_NUM,
@@ -26,6 +25,7 @@ import {
   get3DDistance,
   getCameraPositionZFromViewWidth,
 } from "@/plugins/three/utils";
+import { Font } from "three/examples/jsm/loaders/FontLoader";
 
 export const useTopAnimation = () => {
   // animation keyframes
@@ -52,6 +52,7 @@ export const useTopAnimation = () => {
   let responsive: ResponsiveKey = "mobile";
   let animationInterval = 0;
   let config: TopAnimationConfig | undefined = undefined;
+  let font: any = undefined;
   // position values
   const textValue = ref("");
   const centerX = computed(
@@ -66,7 +67,7 @@ export const useTopAnimation = () => {
   const lightDistance = computed(() => TEXT_SIZE * textValue.value.length * 3);
 
   // set text objects and its animation
-  const setTopAnimation = (topConfig: TopAnimationConfig) => {
+  const setTopAnimation = (topConfig: TopAnimationConfig, fontJson: any) => {
     // clear interval
     if (animationInterval) clearInterval(animationInterval);
     // clear scene
@@ -75,6 +76,7 @@ export const useTopAnimation = () => {
     }
     // get config
     config = topConfig;
+    font = fontJson;
     const { text, plane, spotLight, background } = config;
     // get text value
     responsive = getResponsiveKeyFromWidth(renderDOM.value?.clientWidth || 0);
@@ -85,7 +87,7 @@ export const useTopAnimation = () => {
       frontColor: text.frontColor,
       sideColor: text.sideColor,
       castShadow: true,
-      parameters: { font: TEXT_FONT, size: TEXT_SIZE },
+      parameters: { font: new Font(fontJson), size: TEXT_SIZE },
     });
     textObjects = textObject.children;
     three.scene.add(textObject);
@@ -209,7 +211,7 @@ export const useTopAnimation = () => {
       adjustCameraPositionZ();
     } else {
       // reset objects
-      if (config) setTopAnimation(config);
+      if (config && font) setTopAnimation(config, font);
     }
   });
 
