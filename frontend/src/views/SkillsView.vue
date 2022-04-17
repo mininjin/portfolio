@@ -19,7 +19,7 @@ import SectionTitle from '@/components/UI/SectionTitle.vue';
 import SkillsChart from '@/components/view/SkillsChart.vue';
 
 const store = inject(STATE_KEY);
-const message = computed(() => store?.state.value.messages.skills);
+const message = computed(() => store?.state.value.messages?.skills);
 const container = ref<HTMLElement>();
 onMounted(() => {
   if (container.value) store?.mutations.setCategoryContainer("skills", container.value);  

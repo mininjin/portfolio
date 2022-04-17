@@ -1,7 +1,8 @@
 import { computed, InjectionKey, ref } from "vue";
 import { State } from "./type";
 import initialState from "./initialState";
-import { Category } from "@/@types/schema";
+import { Category, Messages } from "@/@types/schema";
+import { MESSAGE_DIR, MESSAGE_PATH } from "@/constants/application";
 
 export const useStore = () => {
   const state = ref<State>(initialState);
@@ -9,12 +10,19 @@ export const useStore = () => {
     state.value.window.height = window.innerHeight;
     state.value.window.scrollY = window.scrollY;
   };
-  const actions = {};
+  const actions = {
+    fetchMessages: async () => {
+      const language = state.value.language;
+      const res = await fetch(MESSAGE_DIR + MESSAGE_PATH[language]);
+      mutations.setMessages(await res.json());
+    },
+  };
   const mutations = {
     setCategoryContainer: (category: Category, container: HTMLElement) => {
       state.value.containers[category] = container;
     },
     initWindow,
+    setMessages: (messages: Messages) => (state.value.messages = messages),
   };
 
   window.addEventListener("scroll", initWindow);

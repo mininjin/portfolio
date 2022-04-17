@@ -39,11 +39,11 @@ import { isInContent } from '@/plugins/checkScroll';
 import { IMAGE_DIR } from '@/constants/application';
 
 const store = inject(STATE_KEY);
-const message = computed(() => store?.state.value.messages.profile);
+const message = computed(() => store?.state.value.messages?.profile);
 const container = ref<HTMLElement>();
 const profileContainer = ref<HTMLElement>();
 const showProfile = ref(false);
-const birth = computed(() => getBirth(store?.state.value.messages.profile.content.birth || ""));
+const birth = computed(() => getBirth(store?.state.value.messages?.profile.content.birth || ""));
 const image = computed(() => message.value?.content.image ? IMAGE_DIR + message.value.content.image : undefined);
 
 const init = () => {

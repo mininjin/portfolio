@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 import { WorkElement } from '@/@types/schema';
-import { IMAGE_DIR, WORK_BACKGROUND_OPACITY } from '@/constants/application';
+import { WORK_BACKGROUND_OPACITY } from '@/constants/application';
 import { isInContent } from '@/plugins/checkScroll';
 import { getImageSrc } from '@/plugins/image';
 import { setOpacity } from '@/plugins/utils';

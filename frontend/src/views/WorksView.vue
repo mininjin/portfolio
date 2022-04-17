@@ -17,7 +17,7 @@ import SectionTitle from '@/components/UI/SectionTitle.vue';
 import WorkElement from '@/components/view/WorkElement.vue';
 
 const store = inject(STATE_KEY);
-const message = computed(() => store?.state.value.messages.works);
+const message = computed(() => store?.state.value.messages?.works);
 const container = ref<HTMLElement>();
 onMounted(() => {
   if (container.value) store?.mutations.setCategoryContainer("works", container.value);

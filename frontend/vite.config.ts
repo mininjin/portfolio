@@ -11,7 +11,16 @@ export default defineConfig(({ mode }) => {
       createHtmlPlugin({
         minify: true,
         inject: {
-          data: { title: env.VITE_APP_TITLE },
+          data: {
+            title: env.VITE_APP_TITLE,
+            description: env.VITE_DESCRIPTION,
+            ogSiteUrl: env.VITE_SITE_URL,
+            ogThumbnail: env.VITE_THUMBNAIL_URL,
+            ogType: env.VITE_TYPE,
+            ogSiteName: env.VITE_SITE_NAME,
+            ogTwitterCard: env.VITE_TWITTER_CARD,
+            ogTwitterSite: env.VITE_TWITTER_SITE,
+          },
         },
       }),
     ],

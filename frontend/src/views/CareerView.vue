@@ -24,7 +24,7 @@ import SectionTitle from '@/components/UI/SectionTitle.vue';
 import CareerSection from '@/components/view/CareerSection.vue';
 
 const store = inject(STATE_KEY);
-const message = computed(() => store?.state.value.messages.career);
+const message = computed(() => store?.state.value.messages?.career);
 const container = ref<HTMLElement>();
 
 onMounted(() => {

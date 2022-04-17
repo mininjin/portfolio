@@ -18,7 +18,7 @@ export const INITIAL_MESSAGES: Messages = {
         },
         background: { color: "#ffe0cc" },
         spotLight: { color: "#ff8e3c" },
-        plane: { color: "#aaaaaa" },
+        plane: { color: "#55423d" },
       },
     },
   },
@@ -49,14 +49,14 @@ export const INITIAL_MESSAGES: Messages = {
             { name: "Vue/Nuxt", value: 4 },
             { name: "TailwindCSS", value: 3 },
             { name: "React", value: 1 },
-            { name: "Vanilla TS", value: 3 },
+            { name: "Vanilla TS", value: 4 },
           ],
           color: "#d9376e",
         },
         {
           title: "Back End",
           caption:
-            "基本的にAWSのサーバーレス構成しかやらない。Severless Frameworkの実務経験(3ヶ月)がある。Pythonでアルゴリズム設計の実務経験もある。",
+            "基本的にAWSでのサーバーレス構成しかやらない。Severless Frameworkの実務経験(3ヶ月)がある。Pythonでアルゴリズム設計の実務経験もある。",
           chart: [
             { name: "Serverless Framework", value: 3 },
             { name: "AWS", value: 3 },
@@ -222,7 +222,7 @@ export const INITIAL_MESSAGES: Messages = {
             { src: "ui_test/barcode.webp", alt: "バーコードリーダー" },
             { src: "ui_test/menu.webp", alt: "メニュー" },
           ],
-          href: "https://0ta-utan.com/questionnaire/index.html",
+          href: "https://app.0ta-utan.com/questionnaire/index.html",
           information: [
             { title: "開発期間", detail: "5日（50h）" },
             {
@@ -236,13 +236,19 @@ export const INITIAL_MESSAGES: Messages = {
             },
           ],
           caption:
-            "実務で作ったアンケートアプリのUI部分のみを抽出して再デザイン・再設計したアプリ。直感的に選択肢を選ばせたり、VAS形式で回答させる方法にこだわった。また、QuaggaJSによるバーコードリーダーも実装。動的に設問を生成しているため、自由に設問を編集することが可能。実務ではさらにバックエンドのREST APIを作成。括弧書きは実務で使用したもの。",
+            "実務で作ったアンケートアプリのUI部分のみを抽出して再デザイン・再設計したアプリ。直感的に選択肢を選ばせたり、VAS形式で回答させる方法にこだわった。また、QuaggaJSによるバーコードリーダーも実装。動的に設問を生成しているため、自由に設問を編集することが可能。実務ではさらにバックエンドのREST APIを作成。括弧書きは実務で使用したもの。PWA対応済み。",
           color: { theme: "#bae8e8", button: "#272343" },
         },
         {
           title: "ポートフォリオ",
-          images: [{ src: "portfolio/top.webp", alt: "トップ" }],
-          href: "https://0ta-utan.com",
+          images: [
+            { src: "portfolio/top.webp", alt: "ポートフォリオアニメーション" },
+            { src: "portfolio/skills.webp", alt: "エンジニアスキル" },
+            { src: "portfolio/career.webp", alt: "来歴" },
+            { src: "portfolio/works.webp", alt: "作品" },
+            { src: "portfolio/footer.webp", alt: "フッター" },
+          ],
+          href: "https://github.com/mininjin/portfolio",
           information: [
             { title: "開発期間", detail: "8日（60h）" },
             {
@@ -254,7 +260,8 @@ export const INITIAL_MESSAGES: Messages = {
               detail: "AWS S3, Cloudfront",
             },
           ],
-          caption: "ここに詳細が入ります。",
+          caption:
+            "ポートフォリオサイト。見た人が楽しめるように動きのあるサイトを意識。また、容易に変更できるように、ほぼ全ての文言を外部JSON化。いつか英語対応させたい。Three.jsのレスポンシブ対応に悩まされた。",
           color: { theme: "#ff8e3c", button: "#d9376e" },
         },
       ],

@@ -13,10 +13,13 @@
       class="fixed top-0 left-0 w-full h-full ease-in-out z-30 flex flex-col bg-highlight.5 transition-all duration-500 md:flex-col-reverse">
       <div class="flex-grow" @click="toggleMenu"></div>
       <div class="flex-grow-0 bg-highlight.75  text-xl text-primary font-bold p-4">
-        <p v-for="category in categoryList" :key="category.key" class="p-2 mb-2 cursor-pointer" @click="scrollTo(category.key)">{{
-          category.title
-        }}</p>
-        <p class="p-2 mb-2"><AnchorLink href="https://utan-otouto.com" name="Blog" /></p>
+        <p v-for="category in categoryList" :key="category.key" class="p-2 mb-2 cursor-pointer"
+          @click="scrollTo(category.key)">{{
+            category.title
+          }}</p>
+        <p class="p-2 mb-2">
+          <AnchorLink href="https://utan-otouto.com" name="Blog" />
+        </p>
       </div>
       <div class="flex w-full bg-highlight flex-grow-0 opacity-0">
         <div class="p-2 text-left flex-auto text-xl">{{ APP_NAME }}</div>
@@ -44,8 +47,11 @@ const scrollTo = (key: Category) => {
   window.scrollTo({ top, behavior: "smooth" });
   menu.value = false
 }
-const categoryList = computed(() => CATEGORY_LIST.map(key => ({
-  title: store?.state.value.messages[key].title ?? "",
-  key,
-})));
+const categoryList = computed(() => CATEGORY_LIST.map(key => {
+  const messages = store?.state.value.messages
+  return {
+    title: messages ? messages[key].title ?? "" : "",
+    key,
+  }
+}));
 </script>

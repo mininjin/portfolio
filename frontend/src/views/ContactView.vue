@@ -16,7 +16,7 @@ import SectionTitle from '@/components/UI/SectionTitle.vue';
 import ContactElement from '@/components/view/ContactElement.vue';
 
 const store = inject(STATE_KEY);
-const message = computed(() => store?.state.value.messages.contacts);
+const message = computed(() => store?.state.value.messages?.contacts);
 const container = ref<HTMLElement>();
 onMounted(() => {
   if (container.value) store?.mutations.setCategoryContainer("contacts", container.value);

@@ -1,4 +1,4 @@
-import { Category, ChartObject } from "@/@types/schema";
+import { Category, ChartObject, Language } from "@/@types/schema";
 export const APP_NAME = import.meta.env.VITE_APP_TITLE;
 export const FOOTER_MESSAGE = import.meta.env.VITE_FOOTER_MESSAGE;
 export const COPYRIGHT = import.meta.env.VITE_COPYRIGHT;
@@ -11,6 +11,8 @@ export const CATEGORY_LIST: Category[] = [
   "contacts",
 ];
 export const IMAGE_DIR = "/image/";
+export const MESSAGE_DIR = "/messages/";
+export const MESSAGE_PATH: Record<Language, string> = { ja: "ja.json" };
 export const BIRTH_SPLITTER = "/";
 export const CHART_RANGE: Record<"min" | "max", ChartObject["value"]> = {
   min: 0,

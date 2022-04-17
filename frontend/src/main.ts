@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "./assets/tailwind.css";
+import "./assets/index.css";
 
 import { FontAwesomeIcon } from "./plugins/fontawesome";
 

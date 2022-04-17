@@ -1,6 +1,7 @@
 import { IconName } from "@fortawesome/fontawesome-common-types";
 
 export type ResponsiveKey = "desktop" | "tablet" | "mobile";
+export type Language = "ja";
 
 export type Category =
   | "top"

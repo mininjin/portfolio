@@ -1,8 +1,7 @@
-import { INITIAL_MESSAGES } from "@/constants/messages";
 import { State } from "./type";
 
 const state: State = {
-  messages: INITIAL_MESSAGES,
+  language: "ja",
   window: { scrollY: 0, height: 0 },
   containers: {},
 };
