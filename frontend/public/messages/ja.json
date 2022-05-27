@@ -6,7 +6,7 @@
       "animation": {
         "text": {
           "value": {
-            "mobile": "Hi!",
+            "mobile": "0ta",
             "tablet": "0taUtan",
             "desktop": "0taUtan's Portfolio"
           },
@@ -25,10 +25,10 @@
     "direction": "left",
     "content": {
       "image": "utan.webp",
-      "nickname": "ゼロ田 うーた",
+      "nickname": "ぜろ田 うーた",
       "name": "おおた ゆうや",
       "birth": "1996-05-24",
-      "comment": "鳥取県出身のWebエンジニア。新卒2年目にして家族と事業を立てるために地元に帰る。数理学修士（専攻は数理物理学、論文賞受賞歴アリ）好きな言語=TypeScript。基本/応用情報技術者。ユーモラスな人間になりたい。"
+      "comment": "鳥取県出身のWebエンジニア。新卒2年目にして家族と事業のアイデアを求めて地元に帰る。数理学修士（専攻は数理物理学、論文賞受賞歴アリ）好きな言語=TypeScript。基本/応用情報技術者。ユーモラスな人間になりたい。"
     }
   },
   "skills": {
@@ -37,7 +37,7 @@
     "content": {
       "elements": [
         {
-          "title": "Front End",
+          "title": "Client Side",
           "caption": "実務の割合はフロントエンドが最多。Vue3(Composition API)でのSPA開発がほとんど。Nuxt3は勉強中。SASSよりTailwindCSS。モバイルファースト。型付けは正義。",
           "chart": [
             { "name": "Vanilla HTML/CSS", "value": 3 },
@@ -50,8 +50,8 @@
           "color": "#d9376e"
         },
         {
-          "title": "Back End",
-          "caption": "基本的にAWSでのサーバーレス構成しかやらない。Severless Frameworkの実務経験(3ヶ月)がある。Pythonでアルゴリズム設計の実務経験もある。",
+          "title": "Server Side",
+          "caption": "基本的にAWSでのサーバーレス構成しかやらない。AWS AmplifyやSeverless Frameworkの実務経験(3ヶ月)がある。Pythonでアルゴリズム設計の実務経験もある。",
           "chart": [
             { "name": "Serverless Framework", "value": 3 },
             { "name": "AWS", "value": 3 },
@@ -123,7 +123,7 @@
               "type": "text",
               "term": "2021",
               "title": "Make Decision",
-              "explanation": "末っ子の受験失敗を機にお金の大事さを知り、研究者を諦める。そして起業を目指すことを決意。まずは最低限のスキルを得るために就職を決める。"
+              "explanation": "末っ子の受験失敗を機にお金の大事さを知り、研究者を諦める。そして自分の事業を持つことを決意。まずは最低限のスキルを得るために就職を決める。"
             }
           ]
         },
@@ -196,7 +196,7 @@
             },
             { "title": "プラットフォーム", "detail": "AWS S3, Cloudfront" }
           ],
-          "caption": "実家のレストランのWebサイト。モバイルファースト。優しげなゆったりとしたサイトを意識。アニメーションもゆっくりめで作成。静的サイトにして運用コストを月数十円に抑えた。",
+          "caption": "実家のレストランのWebサイト。モバイルファースト。優しげなゆったりとしたサイトを意識。アニメーションもゆっくりめで作成。低コスト高パフォーマンスが売り。",
           "color": { "theme": "#a61c00", "button": "#a61c00" }
         },
         {

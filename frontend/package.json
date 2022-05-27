@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/tailwindcss": "^3.0.10",
     "@types/three": "^0.139.0",
+    "@types/webfontloader": "^1.6.34",
     "@vitejs/plugin-vue": "^2.3.0",
     "autoprefixer": "^10.4.4",
     "chart.js": "^3.7.1",
@@ -29,6 +30,7 @@
     "typescript": "^4.5.4",
     "vite": "^2.9.0",
     "vite-plugin-html": "^3.2.0",
-    "vue-tsc": "^0.29.8"
+    "vue-tsc": "^0.29.8",
+    "webfontloader": "^1.6.28"
   }
 }

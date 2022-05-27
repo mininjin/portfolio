@@ -1,7 +1,7 @@
 <template>
   <div v-if="message" class="h-screen bg-primary.5" ref="container">
     <div class="text-2xl md:text-3xl lg:text-4xl text-center text-shadow pt-10 md:pt-20 lg:pt-24">{{
-      message.content.message
+        message.content.message
     }}</div>
   </div>
   <div class="fixed top-0 left-0 w-full h-full -z-10" ref="renderDOM"></div>
@@ -14,6 +14,7 @@ import { useTopAnimation } from '@/composables/useTopAnimation';
 import { useLoadingAnimation } from '@/composables/useLoadingAnimation';
 import { FONT_URL } from "@/constants/three"
 import { LOADING_PROGRESS_RATE, PROGRESS_END } from "@/constants/loading"
+import webfontloader from "webfontloader";
 
 const store = inject(STATE_KEY);
 const message = computed(() => store?.state.value.messages?.top);
@@ -26,6 +27,15 @@ onMounted(async () => {
   await store?.actions.fetchMessages();
   if (renderDOM.value) init();
   setProgress(LOADING_PROGRESS_RATE.onFetchedMessage);
+  await new Promise<void>((resolve, reject) => {
+    webfontloader.load({
+      google: {
+        families: ["Grape Nuts", "Kaisei HarunoUmi:700", "Noto Serif JP:200"]
+      },
+      active: resolve, inactive: reject
+    })
+  });
+  setProgress(LOADING_PROGRESS_RATE.onFetchedWebfont);
   const fontRes = await fetch(FONT_URL);
   setProgress(LOADING_PROGRESS_RATE.onFetchedFont);
   const font = await fontRes.json();

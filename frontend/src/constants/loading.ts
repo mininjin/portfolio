@@ -7,6 +7,7 @@ export const LOADED_CHECK_WAIT_TIME = 1000;
 export const LOADING_PROGRESS_RATE = {
   onMounted: 10,
   onFetchedMessage: 30,
+  onFetchedWebfont: 50,
   onFetchedFont: 70,
   onCreatedFont: 90,
 };
