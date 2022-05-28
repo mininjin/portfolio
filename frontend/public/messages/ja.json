@@ -51,7 +51,7 @@
         },
         {
           "title": "Server Side",
-          "caption": "基本的にAWSでのサーバーレス構成しかやらない。AWS AmplifyやSeverless Frameworkの実務経験(3ヶ月)がある。Pythonでアルゴリズム設計の実務経験もある。",
+          "caption": "基本的にAWSでのサーバーレス構成しかやらない。AWS AmplifyやSeverless Frameworkの実務経験がある。Pythonでアルゴリズム設計の実務経験もある。",
           "chart": [
             { "name": "Serverless Framework", "value": 3 },
             { "name": "AWS", "value": 3 },
@@ -63,7 +63,7 @@
         },
         {
           "title": "Tools",
-          "caption": "開発用エディターはVSCode。Vimは新人研修で3ヶ月やらされたのみ。WordPressは自分のブログを少しいじれる程度。",
+          "caption": "開発用エディターはVSCode。Vimは新人研修でやらされたのみ。WordPressは自分のブログを少しいじれる程度。",
           "chart": [
             { "name": "WordPress", "value": 2 },
             { "name": "Git", "value": 3 },
