@@ -38,7 +38,7 @@
       "elements": [
         {
           "title": "Client Side",
-          "caption": "実務の割合はフロントエンドが最多。Vue3(Composition API)でのSPA開発がほとんど。Nuxt3は勉強中。SASSよりTailwindCSS。モバイルファースト。型付けは正義。",
+          "caption": "実務の割合はフロントエンドが最多。Vue3(Vite)でのSPA開発がほとんど。Nuxt3は勉強中。SASSよりTailwindCSS。モバイルファースト。型付けは正義。",
           "chart": [
             { "name": "Vanilla HTML/CSS", "value": 3 },
             { "name": "Vanilla JS", "value": 3 },
@@ -194,9 +194,9 @@
               "title": "開発言語など",
               "detail": "Vue, TypeScript, TailwindCSS"
             },
-            { "title": "プラットフォーム", "detail": "AWS S3, Cloudfront" }
+            { "title": "プラットフォーム", "detail": "AWS Amplify" }
           ],
-          "caption": "実家のレストランのWebサイト。モバイルファースト。優しげなゆったりとしたサイトを意識。アニメーションもゆっくりめで作成。低コスト高パフォーマンスが売り。",
+          "caption": "実家のレストランのWebサイト。モバイルファースト。優しげなゆったりとしたサイトを意識。アニメーションもゆっくりめで作成。低コスト高パフォーマンスが売り。カレンダーやお知らせ部分などAmplifyを使って管理アプリとバックエンドも作成。",
           "color": { "theme": "#a61c00", "button": "#a61c00" }
         },
         {
