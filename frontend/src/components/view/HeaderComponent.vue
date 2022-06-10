@@ -15,11 +15,8 @@
       <div class="flex-grow-0 bg-highlight.75  text-xl text-primary font-bold p-4">
         <p v-for="category in categoryList" :key="category.key" class="p-2 mb-2 cursor-pointer"
           @click="scrollTo(category.key)">{{
-            category.title
+              category.title
           }}</p>
-        <p class="p-2 mb-2">
-          <AnchorLink href="https://utan-otouto.com" name="Blog" />
-        </p>
       </div>
       <div class="flex w-full bg-highlight flex-grow-0 opacity-0">
         <div class="p-2 text-left flex-auto text-xl">{{ APP_NAME }}</div>
