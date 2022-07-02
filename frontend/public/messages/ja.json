@@ -25,7 +25,7 @@
     "direction": "left",
     "content": {
       "image": "utan.webp",
-      "nickname": "ぜろ田 うーた",
+      "nickname": "0ta Utan",
       "name": "おおた ゆうや",
       "birth": "1996-05-24",
       "comment": "鳥取県出身のWebエンジニア。新卒2年目にして家族と事業のアイデアを求めて地元に帰る。数理学修士（専攻は数理物理学、論文賞受賞歴アリ）好きな言語=TypeScript。基本/応用情報技術者。ユーモラスな人間になりたい。"
@@ -179,7 +179,7 @@
     "content": {
       "elements": [
         {
-          "title": "実家のWebサイト",
+          "title": "café Berry",
           "images": [
             { "src": "aoya_cafe_berry/top.webp", "alt": "トップ" },
             { "src": "aoya_cafe_berry/concept.webp", "alt": "コンセプト" },
@@ -196,33 +196,30 @@
             },
             { "title": "プラットフォーム", "detail": "AWS Amplify" }
           ],
-          "caption": "実家のレストランのWebサイト。モバイルファースト。優しげなゆったりとしたサイトを意識。アニメーションもゆっくりめで作成。低コスト高パフォーマンスが売り。カレンダーやお知らせ部分などAmplifyを使って管理アプリとバックエンドも作成。",
+          "caption": "実家のレストランcafé BerryのWebサイト。モバイルファースト。優しげなゆったりとしたサイトを意識。アニメーションもゆっくりめで作成。低コスト高パフォーマンスが売り。カレンダーやお知らせ部分などAmplifyを使って管理アプリとバックエンドも作成。",
           "color": { "theme": "#a61c00", "button": "#a61c00" }
         },
         {
-          "title": "スマホ向けUIテストアプリ",
+          "title": "café Berry LINE予約",
           "images": [
-            { "src": "ui_test/top.webp", "alt": "UI TEST トップ" },
-            { "src": "ui_test/select.webp", "alt": "選択式" },
-            { "src": "ui_test/seek_bar.webp", "alt": "シークバー" },
-            { "src": "ui_test/number.webp", "alt": "数値選択" },
-            { "src": "ui_test/barcode.webp", "alt": "バーコードリーダー" },
-            { "src": "ui_test/menu.webp", "alt": "メニュー" }
+            { "src": "berry_line/start.webp", "alt": "スタート" },
+            { "src": "berry_line/reservation.webp", "alt": "予約" },
+            { "src": "berry_line/check.webp", "alt": "メッセージ送信" }
           ],
-          "href": "https://app.0ta-utan.com/questionnaire/index.html",
+          "href": "https://lin.ee/oi8UjSi",
           "information": [
-            { "title": "開発期間", "detail": "5日（50h）" },
+            { "title": "開発期間", "detail": "4日（35h）" },
             {
               "title": "開発言語など",
-              "detail": "Vue, TypeScript, TailwindCSS, (Node, Serverless Framework)"
+              "detail": "Vue, TypeScript, TailwindCSS, LIFF"
             },
             {
               "title": "プラットフォーム",
-              "detail": "AWS S3, Cloudfront, (DynamoDB, API Gateway, Lambda)"
+              "detail": "AWS Amplify"
             }
           ],
-          "caption": "実務で作ったアンケートアプリのUI部分のみを抽出して再デザイン・再設計したアプリ。直感的に選択肢を選ばせたり、VAS形式で回答させる方法にこだわった。また、QuaggaJSによるバーコードリーダーも実装。動的に設問を生成しているため、自由に設問を編集することが可能。実務ではさらにバックエンドのREST APIを作成。括弧書きは実務で使用したもの。PWA対応済み。",
-          "color": { "theme": "#bae8e8", "button": "#272343" }
+          "caption": "実家のレストランcafé Berry向けに作ったLINE予約アプリ。公式LINEアカウントのチャット画面から起動し、来店日やお弁当の予約をすることができる。予約されると公式LINEアカウントを介して管理者に予約が通知される。",
+          "color": { "theme": "#4cc764", "button": "#06c755" }
         },
         {
           "title": "ポートフォリオ",
